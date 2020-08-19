@@ -20,9 +20,13 @@ def show_user( username ):
 #test a POST!
 @app.route('/login', methods=['GET','POST'])
 def login():
-    if request.method == 'POST':
-        return 'POST and show a login page'
-    elif request.method == 'GET':
+    if request.method == 'GET':
         return 'GET and show a login page'
+    elif request.method == 'POST':
+        return 'POST and show a login page'
 
+# delete
+@app.route('/user/<userID>', methods=['DELETE'])
+def remove_user( userID ):
+    return 'deleted user %s' % userID
 
